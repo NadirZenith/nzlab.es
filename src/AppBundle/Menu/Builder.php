@@ -42,13 +42,15 @@ class Builder extends ContainerAware
 
         $menu = $factory->createItem('main', $menuOptions);
         $menu->addChild($this->trans('Home'), array('route' => '_page_alias_home'));
-
+        $menu->addChild($this->trans('Blog'), array('route' => 'sonata_news_archive'));
+/*
         $menu->addChild($this->trans('Example Page'), array(
             'route' => 'page_slug',
             'routeParameters' => array(
                 'path' => '/example'
             )
         ));
+ */
 
 
         $curr_locale = $this->container->get('request')->getLocale();
