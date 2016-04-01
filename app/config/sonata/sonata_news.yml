@@ -9,6 +9,9 @@ sonata_news:
         collection: AppBundle\Entity\Classification\Collection
         user:       AppBundle\Entity\User\User
         media:      AppBundle\Entity\Media\Media
+    admin:
+        post:       
+            class:  AppBundle\Admin\PostAdmin
 
     title:        %sonata_news.blog_title%
     link:         %sonata_news.blog_link%
