@@ -43,6 +43,7 @@ class Builder extends ContainerAware
         $menu = $factory->createItem('main', $menuOptions);
         $menu->addChild($this->trans('Home'), array('route' => '_page_alias_home'));
         $menu->addChild($this->trans('Blog'), array('route' => 'sonata_news_archive'));
+        $menu->addChild($this->trans('Portfolio'), array('route' => 'nz_portfolio_archive'));
 /*
         $menu->addChild($this->trans('Example Page'), array(
             'route' => 'page_slug',

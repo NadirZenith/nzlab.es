@@ -40,3 +40,8 @@ sonata_media_media:
 blog:
     resource: '@AppBundle/Resources/config/routing/news.xml'
     prefix: /blog
+    
+portfolio:
+    resource: '@NzPortfolioBundle/Resources/config/routing/portfolio.xml'
+    prefix: /portfolio
+

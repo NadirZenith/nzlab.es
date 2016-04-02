@@ -39,7 +39,7 @@ imports:
     # Nz
     - { resource: nz/wordpress.yml }
     - { resource: nz/migration.yml }
-    #- { resource: nz/portfolio.yml }
+    - { resource: nz/portfolio.yml }
 
 
 framework:

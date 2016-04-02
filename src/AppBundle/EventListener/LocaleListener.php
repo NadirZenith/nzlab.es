@@ -24,7 +24,6 @@ class LocaleListener implements EventSubscriberInterface
         $request = $event->getRequest();
         /* $request->setLocale($request->getPreferredLanguage()); */
 
-        include 'nzdebug.php';
 
         if ($request->query->has('_locale')) {
             //if user changed locale by query string
