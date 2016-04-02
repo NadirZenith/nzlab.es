@@ -8,8 +8,8 @@ sonata_seo:
         title:            NzLab
         metas:
             name:
-                keywords:             foo bar
-                description:          The description
+                #keywords:             foo bar
+                #description:          The description
                 robots:               index, follow
 
             property:
