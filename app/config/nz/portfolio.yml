@@ -41,5 +41,5 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                small:    { width: 320, quality: 100}
+                small:    { width: 320, height: 150, quality: 100}
                 wide:     { width: 820, quality: 100}

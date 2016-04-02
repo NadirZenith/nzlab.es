@@ -88,6 +88,7 @@ sonata_media:
             # the resizer must be set to false, otherwhise this can delete icon files from the fs
             resizer:    false
         image:
+           resizer: nz.sonata.media.resizer.fix_crop 
            thumbnail: sonata.media.thumbnail.format          # default value
            
 #           thumbnail: sonata.media.thumbnail.consumer.format # can be used to dispatch the resize action to async task
@@ -115,8 +116,8 @@ sonata_media:
 
     resizer:
         simple:
-#            mode:  outbound
-            mode:  inset
+            mode:  outbound
+            #mode:  inset
 
 #
 # The LiipImagineBundle can be used if you want to convert on demand an image

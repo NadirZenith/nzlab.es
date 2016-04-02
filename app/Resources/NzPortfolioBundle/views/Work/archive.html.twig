@@ -12,7 +12,9 @@
     {% for work in pager.getResults() %}
         <div class="sonata-blog-work-container row">
             <div class="col-lg-3">
-                {% media work.image, 'small' with {'class' : 'img-responsive'} %}
+                <a href="{{ url('nz_portfolio_view', { 'permalink': nz_portfolio_permalink(work) }) }}"> 
+                    {% media work.image, 'small' with {'class' : 'img-responsive'} %}
+                </a>
             </div>
             <div class="col-lg-9">
                 <header >
