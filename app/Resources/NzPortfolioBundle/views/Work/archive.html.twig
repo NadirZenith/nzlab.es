@@ -10,37 +10,43 @@
 
 <div class="sonata-blog-work-list">
     {% for work in pager.getResults() %}
-        <div class="sonata-blog-work-container">
-            <header>
-                <h2 class="sonata-blog-work-title">
-                    <a href="{{ url('nz_portfolio_view', { 'permalink': nz_portfolio_permalink(work) }) }}"> 
-                        {{ work.title }}
-                    </a>
-                </h2>
+        <div class="sonata-blog-work-container row">
+            <div class="col-lg-3">
+                {% media work.image, 'small' with {'class' : 'img-responsive'} %}
+            </div>
+            <div class="col-lg-9">
+                <header >
 
-                <div class="sonata-blog-work-information">
-                    {#                    
-                                        <span class="sonata-blog-work-author">
-                                            {{ 'archive_author'|trans({'%author%': work.author }, 'NzPortfolioBundle') }}
-                                        </span> |
-                    #}
+                    <h2 class="sonata-blog-work-title">
+                        <a href="{{ url('nz_portfolio_view', { 'permalink': nz_portfolio_permalink(work) }) }}"> 
+                            {{ work.title }}
+                        </a>
+                    </h2>
 
-                    {#<i class="icon-calendar"></i>#}
-                    {#{{ work.publicationDateStart | format_date }}#}
+                    <div class="sonata-blog-work-information">
+                        {#                    
+                                            <span class="sonata-blog-work-author">
+                                                {{ 'archive_author'|trans({'%author%': work.author }, 'NzPortfolioBundle') }}
+                                            </span> |
+                        #}
 
-                    <div class="sonata-blog-work-tags">
-                        
-                        {{ 'published_under'|transchoice(work.tags|length, {}, 'NzPortfolioBundle') }}
+                        {#<i class="icon-calendar"></i>#}
+                        {#{{ work.publicationDateStart | format_date }}#}
 
-                        {% for tag in work.tags %}
-                            <a href="{{ url('nz_portfolio_tag', { 'tag': tag.slug } ) }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
-                        {% endfor %}
+                        <div class="sonata-blog-work-tags">
+
+                            {{ 'published_under'|transchoice(work.tags|length, {}, 'NzPortfolioBundle') }}
+
+                            {% for tag in work.tags %}
+                                <a href="{{ url('nz_portfolio_tag', { 'tag': tag.slug } ) }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-            </header>
+                </header>
 
-            <div class="sonata-blog-work-abtract">
-                {{ work.abstract }}
+                <div class="sonata-blog-work-abtract">
+                    {{ work.abstract }}
+                </div>
             </div>
         </div>
 
