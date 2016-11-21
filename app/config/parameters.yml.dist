@@ -44,3 +44,4 @@ parameters:
     ffmpeg.binaries: ~
     ffprobe.binaries: ~
     ffmpeg.frame.seconds: ~
+    cookie_domain: .nzlab.es
