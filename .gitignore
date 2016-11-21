@@ -1,4 +1,3 @@
-/behat.yml
 /app/cache/*
 /app/logs/*
 /app/*.cache
@@ -7,8 +6,7 @@
 /web/sitemap*.xml
 /app/config/parameters*.yml
 /vendor
-/build
-/web/vendor
-/web/assetic/*[0-9]*
-/nbproject
-/.phpcomplete_extended
+/.idea
+/bin/composer
+/bin/php
+/backups
