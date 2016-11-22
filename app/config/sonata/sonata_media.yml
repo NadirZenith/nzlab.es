@@ -6,7 +6,7 @@ sonata_media:
         media:             AppBundle\Entity\Media\Media
         gallery:           AppBundle\Entity\Media\Gallery
         gallery_has_media: AppBundle\Entity\Media\GalleryHasMedia
-#        category:          AppBundle\Entity\Classification\Category
+        category:          AppBundle\Entity\Classification\Category
 
     db_driver:       doctrine_orm # | doctrine_mongodb
     default_context: default
@@ -21,11 +21,11 @@ sonata_media:
                 - sonata.media.provider.file
                 - sonata.media.provider.vimeo
                 #NzSonataMediaBundle
-                - sonata.media.provider.video
-                - sonata.media.provider.sapo
-                - sonata.media.provider.soundcloud
-                - sonata.media.provider.playwire
-                - sonata.media.provider.audio
+#                - sonata.media.provider.video
+#                - sonata.media.provider.sapo
+#                - sonata.media.provider.soundcloud
+#                - sonata.media.provider.playwire
+#                - sonata.media.provider.audio
 
             formats:
                 big:   { width: 970 , quality: 100}
@@ -46,11 +46,11 @@ sonata_media:
                 - sonata.media.provider.file
                 - sonata.media.provider.vimeo
                 #NzSonataMediaBundle
-                - sonata.media.provider.video
-                - sonata.media.provider.sapo
-                - sonata.media.provider.soundcloud
-                - sonata.media.provider.playwire
-                - sonata.media.provider.audio
+#                - sonata.media.provider.video
+#                - sonata.media.provider.sapo
+#                - sonata.media.provider.soundcloud
+#                - sonata.media.provider.playwire
+#                - sonata.media.provider.audio
 
             formats:
                 #abstract: { width: 100, quality: 100}

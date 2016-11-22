@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20161122170719 extends AbstractMigration
+class Version20161122211341 extends AbstractMigration
 {
     /**
      * @param Schema $schema
@@ -19,9 +19,6 @@ class Version20161122170719 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('ALTER TABLE basket__basket_element DROP FOREIGN KEY FK_4538CA2C1BE1FB52');
-        $this->addSql('ALTER TABLE classification__category DROP FOREIGN KEY FK_43629B36E25D857E');
-        $this->addSql('ALTER TABLE classification__collection DROP FOREIGN KEY FK_A406B56AE25D857E');
-        $this->addSql('ALTER TABLE classification__tag DROP FOREIGN KEY FK_CA57A1C7E25D857E');
         $this->addSql('ALTER TABLE basket__basket DROP FOREIGN KEY FK_1FD2A7E19395C3F3');
         $this->addSql('ALTER TABLE customer__address DROP FOREIGN KEY FK_55C3CDD39395C3F3');
         $this->addSql('ALTER TABLE invoice__invoice DROP FOREIGN KEY FK_FB05AC619395C3F3');
@@ -47,7 +44,6 @@ class Version20161122170719 extends AbstractMigration
         $this->addSql('DROP TABLE basket__basket_element');
         $this->addSql('DROP TABLE classification__category_audit');
         $this->addSql('DROP TABLE classification__collection_audit');
-        $this->addSql('DROP TABLE classification__context');
         $this->addSql('DROP TABLE classification__context_audit');
         $this->addSql('DROP TABLE classification__tag_audit');
         $this->addSql('DROP TABLE comment__comment_audit');
@@ -101,30 +97,8 @@ class Version20161122170719 extends AbstractMigration
         $this->addSql('DROP TABLE test_color_audit');
         $this->addSql('DROP TABLE test_material');
         $this->addSql('DROP TABLE test_material_audit');
-        $this->addSql('ALTER TABLE fos_user_user CHANGE biography biography VARCHAR(255) DEFAULT NULL');
         $this->addSql('CREATE INDEX notification_message_state_idx ON notification__message (state)');
         $this->addSql('CREATE INDEX notification_message_created_at_idx ON notification__message (created_at)');
-        $this->addSql('DROP INDEX tag_collection ON classification__collection');
-        $this->addSql('DROP INDEX IDX_A406B56AE25D857E ON classification__collection');
-        $this->addSql('ALTER TABLE classification__collection DROP context');
-        $this->addSql('ALTER TABLE timeline__timeline DROP FOREIGN KEY FK_FFBC6AD523EDC87');
-        $this->addSql('ALTER TABLE timeline__timeline DROP FOREIGN KEY FK_FFBC6AD59D32F035');
-        $this->addSql('DROP INDEX IDX_FFBC6AD59D32F035 ON timeline__timeline');
-        $this->addSql('DROP INDEX IDX_FFBC6AD523EDC87 ON timeline__timeline');
-        $this->addSql('ALTER TABLE timeline__timeline DROP subject_id, DROP action_id');
-        $this->addSql('ALTER TABLE media__media DROP FOREIGN KEY FK_5C6DD74E12469DE2');
-        $this->addSql('DROP INDEX IDX_5C6DD74E12469DE2 ON media__media');
-        $this->addSql('ALTER TABLE media__media DROP category_id, DROP cdn_flush_identifier');
-        $this->addSql('ALTER TABLE timeline__action_component DROP FOREIGN KEY FK_6ACD1B169D32F035');
-        $this->addSql('ALTER TABLE timeline__action_component DROP FOREIGN KEY FK_6ACD1B16E2ABAFFF');
-        $this->addSql('DROP INDEX IDX_6ACD1B169D32F035 ON timeline__action_component');
-        $this->addSql('DROP INDEX IDX_6ACD1B16E2ABAFFF ON timeline__action_component');
-        $this->addSql('ALTER TABLE timeline__action_component DROP action_id, DROP component_id');
-        $this->addSql('DROP INDEX tag_context ON classification__tag');
-        $this->addSql('DROP INDEX IDX_CA57A1C7E25D857E ON classification__tag');
-        $this->addSql('ALTER TABLE classification__tag DROP context');
-        $this->addSql('DROP INDEX IDX_43629B36E25D857E ON classification__category');
-        $this->addSql('ALTER TABLE classification__category DROP context');
     }
 
     /**
@@ -139,7 +113,6 @@ class Version20161122170719 extends AbstractMigration
         $this->addSql('CREATE TABLE basket__basket_element (id INT AUTO_INCREMENT NOT NULL, basket_id INT DEFAULT NULL, product_id INT NOT NULL, position INT NOT NULL, vat_rate VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, unit_price VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, price VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, quantity INT NOT NULL, options LONGTEXT NOT NULL COLLATE utf8_unicode_ci COMMENT \'(DC2Type:json)\', name VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, product_code VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, INDEX IDX_4538CA2C1BE1FB52 (basket_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE classification__category_audit (id INT NOT NULL, rev INT NOT NULL, parent_id INT DEFAULT NULL, context VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, media_id INT DEFAULT NULL, name VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, enabled TINYINT(1) DEFAULT NULL, slug VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, description VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, position INT DEFAULT NULL, created_at DATETIME DEFAULT NULL, updated_at DATETIME DEFAULT NULL, revtype VARCHAR(4) NOT NULL COLLATE utf8_unicode_ci, PRIMARY KEY(id, rev)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE classification__collection_audit (id INT NOT NULL, rev INT NOT NULL, context VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, media_id INT DEFAULT NULL, name VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, enabled TINYINT(1) DEFAULT NULL, slug VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, description VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, created_at DATETIME DEFAULT NULL, updated_at DATETIME DEFAULT NULL, revtype VARCHAR(4) NOT NULL COLLATE utf8_unicode_ci, PRIMARY KEY(id, rev)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE classification__context (id VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, name VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, enabled TINYINT(1) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE classification__context_audit (id VARCHAR(255) NOT NULL COLLATE utf8_unicode_ci, rev INT NOT NULL, name VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, enabled TINYINT(1) DEFAULT NULL, created_at DATETIME DEFAULT NULL, updated_at DATETIME DEFAULT NULL, revtype VARCHAR(4) NOT NULL COLLATE utf8_unicode_ci, PRIMARY KEY(id, rev)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE classification__tag_audit (id INT NOT NULL, rev INT NOT NULL, context VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, name VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, enabled TINYINT(1) DEFAULT NULL, slug VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, created_at DATETIME DEFAULT NULL, updated_at DATETIME DEFAULT NULL, revtype VARCHAR(4) NOT NULL COLLATE utf8_unicode_ci, PRIMARY KEY(id, rev)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE comment__comment_audit (id INT NOT NULL, rev INT NOT NULL, thread_id VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, body LONGTEXT DEFAULT NULL COLLATE utf8_unicode_ci, ancestors VARCHAR(1024) DEFAULT NULL COLLATE utf8_unicode_ci, depth INT DEFAULT NULL, created_at DATETIME DEFAULT NULL, state INT DEFAULT NULL, author_name VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, email VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, website VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci, note DOUBLE PRECISION DEFAULT NULL, private TINYINT(1) DEFAULT NULL, revtype VARCHAR(4) NOT NULL COLLATE utf8_unicode_ci, PRIMARY KEY(id, rev)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
@@ -225,32 +198,7 @@ class Version20161122170719 extends AbstractMigration
         $this->addSql('ALTER TABLE test_car_inspection ADD CONSTRAINT FK_B4624299C3C6F69F FOREIGN KEY (car_id) REFERENCES test_car (id)');
         $this->addSql('ALTER TABLE test_car_inspection ADD CONSTRAINT FK_B4624299D0E3F35F FOREIGN KEY (inspector_id) REFERENCES fos_user_user (id)');
         $this->addSql('ALTER TABLE test_color ADD CONSTRAINT FK_6D88EEE2E308AC6F FOREIGN KEY (material_id) REFERENCES test_material (id)');
-        $this->addSql('ALTER TABLE classification__category ADD context VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci');
-        $this->addSql('ALTER TABLE classification__category ADD CONSTRAINT FK_43629B36E25D857E FOREIGN KEY (context) REFERENCES classification__context (id)');
-        $this->addSql('CREATE INDEX IDX_43629B36E25D857E ON classification__category (context)');
-        $this->addSql('ALTER TABLE classification__collection ADD context VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci');
-        $this->addSql('ALTER TABLE classification__collection ADD CONSTRAINT FK_A406B56AE25D857E FOREIGN KEY (context) REFERENCES classification__context (id)');
-        $this->addSql('CREATE UNIQUE INDEX tag_collection ON classification__collection (slug, context)');
-        $this->addSql('CREATE INDEX IDX_A406B56AE25D857E ON classification__collection (context)');
-        $this->addSql('ALTER TABLE classification__tag ADD context VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci');
-        $this->addSql('ALTER TABLE classification__tag ADD CONSTRAINT FK_CA57A1C7E25D857E FOREIGN KEY (context) REFERENCES classification__context (id)');
-        $this->addSql('CREATE UNIQUE INDEX tag_context ON classification__tag (slug, context)');
-        $this->addSql('CREATE INDEX IDX_CA57A1C7E25D857E ON classification__tag (context)');
-        $this->addSql('ALTER TABLE fos_user_user CHANGE biography biography VARCHAR(1000) DEFAULT NULL COLLATE utf8_unicode_ci');
-        $this->addSql('ALTER TABLE media__media ADD category_id INT DEFAULT NULL, ADD cdn_flush_identifier VARCHAR(64) DEFAULT NULL COLLATE utf8_unicode_ci');
-        $this->addSql('ALTER TABLE media__media ADD CONSTRAINT FK_5C6DD74E12469DE2 FOREIGN KEY (category_id) REFERENCES classification__category (id) ON DELETE SET NULL');
-        $this->addSql('CREATE INDEX IDX_5C6DD74E12469DE2 ON media__media (category_id)');
         $this->addSql('DROP INDEX notification_message_state_idx ON notification__message');
         $this->addSql('DROP INDEX notification_message_created_at_idx ON notification__message');
-        $this->addSql('ALTER TABLE timeline__action_component ADD action_id INT DEFAULT NULL, ADD component_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE timeline__action_component ADD CONSTRAINT FK_6ACD1B169D32F035 FOREIGN KEY (action_id) REFERENCES timeline__action (id) ON DELETE CASCADE');
-        $this->addSql('ALTER TABLE timeline__action_component ADD CONSTRAINT FK_6ACD1B16E2ABAFFF FOREIGN KEY (component_id) REFERENCES timeline__component (id) ON DELETE CASCADE');
-        $this->addSql('CREATE INDEX IDX_6ACD1B169D32F035 ON timeline__action_component (action_id)');
-        $this->addSql('CREATE INDEX IDX_6ACD1B16E2ABAFFF ON timeline__action_component (component_id)');
-        $this->addSql('ALTER TABLE timeline__timeline ADD subject_id INT DEFAULT NULL, ADD action_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE timeline__timeline ADD CONSTRAINT FK_FFBC6AD523EDC87 FOREIGN KEY (subject_id) REFERENCES timeline__component (id) ON DELETE CASCADE');
-        $this->addSql('ALTER TABLE timeline__timeline ADD CONSTRAINT FK_FFBC6AD59D32F035 FOREIGN KEY (action_id) REFERENCES timeline__action (id)');
-        $this->addSql('CREATE INDEX IDX_FFBC6AD59D32F035 ON timeline__timeline (action_id)');
-        $this->addSql('CREATE INDEX IDX_FFBC6AD523EDC87 ON timeline__timeline (subject_id)');
     }
 }

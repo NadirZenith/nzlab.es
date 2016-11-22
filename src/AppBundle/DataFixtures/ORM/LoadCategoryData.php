@@ -39,7 +39,7 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
         $category->setName($name);
         $category->setSlug($slug);
         $category->setEnabled($enabled);
-//        $category->setContext($this->getReference(sprintf('context_%s', $context)));
+        $category->setContext($this->getReference(sprintf('context_%s', $context)));
         $this->getCategoryManager()->save($category);
 
         $this->setReference(sprintf('category_%s', $slug), $category);

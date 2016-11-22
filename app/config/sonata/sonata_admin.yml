@@ -37,20 +37,20 @@ sonata_admin:
 
     dashboard:
         blocks:
-#            - { position: left, type: sonata.admin.block.admin_list }
+            - { position: left, type: sonata.admin.block.admin_list }
 #            - { position: right, type: sonata.admin_doctrine_orm.block.audit}
            
-#            -
-#                class:    col-lg-3 col-xs-6
-#                position: top
-#                type:     sonata.admin.block.stats
-#                settings:
-#                    code:  sonata.page.admin.page
-#                    icon:  fa-magic
-#                    text:  Edited Pages
-#                    color: bg-yellow
-#                    filters:
-#                        edited: { value: 1 }
+            -
+                class:    col-lg-3 col-xs-6
+                position: top
+                type:     sonata.admin.block.stats
+                settings:
+                    code:  sonata.page.admin.page
+                    icon:  fa-magic
+                    text:  Edited Pages
+                    color: bg-yellow
+                    filters:
+                        edited: { value: 1 }
 
             - {  position: left, type: sonata.block.service.text, settings: { content: "<div class='panel panel-default'><div class='panel-heading'><h3 class='panel-title'>Welcome!</h3></div><div class='panel-body'>You can customize this dashboard by editing the <code>sonata_admin.yml</code> file. The current dashboard presents the recent items from the NewsBundle and a non-statistical e-commerce information.</div></div>"} }
             - { position: left, type: sonata.timeline.block.timeline, settings: { context: SONATA_ADMIN, max_per_page: 25 }}
@@ -96,6 +96,7 @@ sonata_admin:
                 label_catalogue: SonataClassificationBundle
                 icon:            '<i class="fa fa-sitemap"></i>'
                 items:
+                    - sonata.classification.admin.context
                     - sonata.classification.admin.category
                     - sonata.classification.admin.tag
                     - sonata.classification.admin.collection
@@ -120,16 +121,16 @@ sonata_admin:
                     - sonata.notification.admin.message
 
 
-#    assets:
-#        stylesheets:
+    assets:
+        stylesheets:
 #            # The sandbox includes default pre-optimized version of some css and js
 #            # So you can either use them, and add your custom assets here
 #            #   ~ or ~
 #            # tweak the assetic.yml and the following lines
-#            - assetic/sonata_admin_css.css
-#            - assetic/sonata_formatter_css.css
-#            - assetic/sonata_jqueryui_css.css
-#            - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-black.min.css
+            - assetic/sonata_admin_css.css
+            - assetic/sonata_formatter_css.css
+            - assetic/sonata_jqueryui_css.css
+            - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-black.min.css
 
             # Default admin assets
 #            - bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css
@@ -156,12 +157,12 @@ sonata_admin:
 #            - bundles/sonatapage/sonata-page.back.min.css
 
 
-#        javascripts:
-#            - assetic/sonata_admin_js.js
+        javascripts:
+            - assetic/sonata_admin_js.js
 ##            - bundles/sonataadmin/Admin.js
 ##            - bundles/sonataadmin/treeview.js
-#            - assetic/sonata_jqueryui_js.js
-#            - assetic/sonata_formatter_js.js
+            - assetic/sonata_jqueryui_js.js
+            - assetic/sonata_formatter_js.js
 #            - bundles/sonataformatter/vendor/ckeditor/ckeditor.js
 
             # Default admin assets

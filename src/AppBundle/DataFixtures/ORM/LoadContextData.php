@@ -37,7 +37,6 @@ class LoadContextData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        return;
         //default
         $this->addContext('default', 'Default');
 

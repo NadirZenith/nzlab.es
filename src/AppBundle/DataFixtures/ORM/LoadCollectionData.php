@@ -37,7 +37,7 @@ class LoadCollectionData extends AbstractFixture implements OrderedFixtureInterf
         $collection = $this->getCollectionManager()->create();
         $collection->setName($name);
         $collection->setSlug($slug);
-//        $collection->setContext($this->getContext($context));
+        $collection->setContext($this->getContext($context));
         $collection->setDescription($description);
         $collection->setEnabled($enabled);
         $this->getCollectionManager()->save($collection);
