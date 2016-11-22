@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d372e2569f49c2fb41606f94e176fa77",
-    "content-hash": "3fc96bb90ae57ed336a48772edf96acc",
+    "hash": "6ae12e0375f7fbeedf051c0d80c52cfb",
+    "content-hash": "68e2aa63de67929b63e53b8cba883486",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2324,6 +2324,83 @@
             ],
             "description": "Symfony filesystem extension to handle temporary files",
             "time": "2016-03-05 10:22:50"
+        },
+        {
+            "name": "nz/crawler-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NadirZenith/NzCrawlerBundle.git",
+                "reference": "a78b192d22edca07a26514e556d39b745698a0f1"
+            },
+            "require": {
+                "doctrine/orm": "^2.4",
+                "php": ">=5.3.3",
+                "symfony/css-selector": "~2.1",
+                "symfony/dom-crawler": "~2.1",
+                "symfony/symfony": "~2.5"
+            },
+            "suggest": {
+                "sonata-project/admin-bundle": "~2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Nz\\CrawlerBundle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nadir Zenith",
+                    "email": "2cb.md2@gmail.com",
+                    "homepage": "https://nzlab.es"
+                }
+            ],
+            "description": "Crawler bundle for symfony with sonata support",
+            "homepage": "https://nzlab.es",
+            "time": "2016-11-22 22:18:15"
+        },
+        {
+            "name": "nz/cron-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NadirZenith/NzCronBundle.git",
+                "reference": "d298ad90f90b4256cb19fbffb222ab0322cc1a4a"
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "*",
+                "php": ">=5.3.2",
+                "symfony/symfony": "~2.5"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Nz\\CronBundle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nadir Zenith",
+                    "email": "2cb.md2@gmail.com",
+                    "homepage": "https://nzlab.es"
+                }
+            ],
+            "description": "This bundle provides scheduled execution of Symfony2 commands with sonata admin support",
+            "homepage": "https://nzlab.es",
+            "keywords": [
+                "cron",
+                "schedule",
+                "sonata",
+                "time"
+            ],
+            "time": "2016-03-18 14:38:02"
         },
         {
             "name": "nz/migration-bundle",
@@ -6791,7 +6868,9 @@
         "nz/portfolio-bundle": 20,
         "nz/sonata-media-bundle": 20,
         "nz/wordpress-bundle": 20,
-        "nz/migration-bundle": 20
+        "nz/migration-bundle": 20,
+        "nz/cron-bundle": 20,
+        "nz/crawler-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

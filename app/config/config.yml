@@ -41,6 +41,7 @@ imports:
     - { resource: nz/sonata_media.yml }
     - { resource: nz/wordpress.yml }
     - { resource: nz/migration.yml }
+    - { resource: nz/cron.yml }
 #    - { resource: nz/crawler.yml.yml }
 
 

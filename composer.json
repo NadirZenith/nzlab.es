@@ -48,7 +48,9 @@
         "nz/portfolio-bundle": "dev-master",
         "nz/sonata-media-bundle" : "dev-master",
         "nz/wordpress-bundle" : "dev-master",
-        "nz/migration-bundle" : "dev-master"
+        "nz/migration-bundle" : "dev-master",
+        "nz/cron-bundle" : "dev-master",
+        "nz/crawler-bundle" : "dev-master"
 
     },
 
@@ -80,11 +82,11 @@
       },
       {
         "type": "git",
-        "url": "https://github.com/NadirZenith/NzCrawlerBundle.git"
+        "url": "https://github.com/NadirZenith/NzCronBundle.git"
       },
       {
         "type": "git",
-        "url": "https://github.com/NadirZenith/NzCronBundle.git"
+        "url": "https://github.com/NadirZenith/NzCrawlerBundle.git"
       }
     ],
 

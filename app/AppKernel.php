@@ -93,9 +93,9 @@ class AppKernel extends Kernel
             new Nz\PortfolioBundle\NzPortfolioBundle(),
             new Nz\SonataMediaBundle\NzSonataMediaBundle(),
             new Nz\WordpressBundle\NzWordpressBundle(),
-            new Nz\MigrationBundle\NzMigrationBundle()
+            new Nz\MigrationBundle\NzMigrationBundle(),
+            new Nz\CronBundle\NzCronBundle()
 //            new Nz\CrawlerBundle\NzCrawlerBundle(),
-//            new Nz\CronBundle\NzCronBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

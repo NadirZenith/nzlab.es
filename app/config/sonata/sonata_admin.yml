@@ -108,7 +108,6 @@ sonata_admin:
                 items:
                     - sonata.page.admin.page
                     - sonata.page.admin.site
-#                    - nz.cron.admin.job
 
             sonata.admin.group.administration:
                 label:           sonata_administration

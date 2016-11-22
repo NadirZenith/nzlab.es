@@ -1,0 +1,10 @@
+
+#
+# more information can be found here https://sonata-project.org/bundles/admin
+#
+sonata_admin:
+    dashboard:
+        groups:
+            sonata.admin.group.site_builder:
+                items:
+                    - nz.cron.admin.job
