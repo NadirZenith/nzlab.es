@@ -6,7 +6,7 @@ sonata_media:
         media:             AppBundle\Entity\Media\Media
         gallery:           AppBundle\Entity\Media\Gallery
         gallery_has_media: AppBundle\Entity\Media\GalleryHasMedia
-        category:          AppBundle\Entity\Classification\Category
+#        category:          AppBundle\Entity\Classification\Category
 
     db_driver:       doctrine_orm # | doctrine_mongodb
     default_context: default
@@ -88,7 +88,8 @@ sonata_media:
             # the resizer must be set to false, otherwhise this can delete icon files from the fs
             resizer:    false
         image:
-           resizer: nz.sonata.media.resizer.fix_crop 
+#           resizer: nz.sonata.media.resizer.fix_crop
+#           resizer: sonata.media.resizer.fixed
            thumbnail: sonata.media.thumbnail.format          # default value
            
 #           thumbnail: sonata.media.thumbnail.consumer.format # can be used to dispatch the resize action to async task

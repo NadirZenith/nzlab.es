@@ -23,7 +23,6 @@ class AppKernel extends Kernel
     {
         $bundles = array(
 
-            new AppBundle\AppBundle(),
 
             // SYMFONY STANDARD EDITION
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
@@ -32,18 +31,18 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new JMS\AopBundle\JMSAopBundle(),
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+//            new JMS\AopBundle\JMSAopBundle(),
+//            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
 
             // DOCTRINE
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+//            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
 
             // KNP HELPER BUNDLES
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
-            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+//            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 
             // SONATA FEATURE
             new FOS\UserBundle\FOSUserBundle(),
@@ -88,18 +87,19 @@ class AppKernel extends Kernel
             new Spy\TimelineBundle\SpyTimelineBundle(),
             new Sonata\TimelineBundle\SonataTimelineBundle(),
 
-            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
-            
+            new AppBundle\AppBundle(),
+
             //Nz Bundles
-            new Nz\SonataMediaBundle\NzSonataMediaBundle(),
-            new Nz\WordpressBundle\NzWordpressBundle(),
-            new Nz\MigrationBundle\NzMigrationBundle(),
-            new Nz\CrawlerBundle\NzCrawlerBundle(),
-            new Nz\CronBundle\NzCronBundle(),
-            new Nz\PortfolioBundle\NzPortfolioBundle()
+            new Nz\PortfolioBundle\NzPortfolioBundle(),
+            new Nz\SonataMediaBundle\NzSonataMediaBundle()
+//            new Nz\WordpressBundle\NzWordpressBundle(),
+//            new Nz\MigrationBundle\NzMigrationBundle(),
+//            new Nz\CrawlerBundle\NzCrawlerBundle(),
+//            new Nz\CronBundle\NzCronBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            $bundles[] = new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Bazinga\Bundle\FakerBundle\BazingaFakerBundle();

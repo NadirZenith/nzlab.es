@@ -72,8 +72,8 @@ security:
                 path: /logout
                 # We set invalidate_session to false because we want basket
                 # to be fully persisted even when user logout and login again
-                invalidate_session: false
-                handlers: ['sonata.page.cms_manager_selector']
+#                invalidate_session: false
+#                handlers: ['sonata.page.cms_manager_selector']
             anonymous:    true
 
     access_control:

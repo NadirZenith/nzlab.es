@@ -28,7 +28,7 @@ class LoadCrawlerData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-
+return;
         $this->addCrawler('TaBonito', file_get_contents(__DIR__ . './../data/tabonito_config_crawler.yml'));
         $this->addCrawler('TaFixe', file_get_contents(__DIR__ . './../data/tafixe_config_crawler.yml'));
         $this->addCrawler('AiNanas', file_get_contents(__DIR__ . './../data/ainanas_config_crawler.yml'));

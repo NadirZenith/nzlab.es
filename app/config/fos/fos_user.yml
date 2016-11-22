@@ -1,5 +1,5 @@
 fos_user:
-    db_driver:      orm # can be orm or odm
+    db_driver:      orm
     firewall_name:  main
 
     # if you change the class configuration, please also alter the sonata_user.yml file
