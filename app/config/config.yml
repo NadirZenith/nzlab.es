@@ -37,9 +37,11 @@ imports:
     - { resource: sonata/sonata_classification.yml }
 #
 #    # Nz
+    - { resource: nz/portfolio.yml }
+    - { resource: nz/sonata_media.yml }
+#    - { resource: nz/crawler.yml.yml }
 #    - { resource: nz/wordpress.yml }
 #    - { resource: nz/migration.yml }
-    - { resource: nz/portfolio.yml }
 
 
 framework:

@@ -20,12 +20,6 @@ sonata_media:
                 - sonata.media.provider.image
                 - sonata.media.provider.file
                 - sonata.media.provider.vimeo
-                #NzSonataMediaBundle
-#                - sonata.media.provider.video
-#                - sonata.media.provider.sapo
-#                - sonata.media.provider.soundcloud
-#                - sonata.media.provider.playwire
-#                - sonata.media.provider.audio
 
             formats:
                 big:   { width: 970 , quality: 100}

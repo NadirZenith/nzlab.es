@@ -91,7 +91,7 @@ class AppKernel extends Kernel
 
             //Nz Bundles
             new Nz\PortfolioBundle\NzPortfolioBundle(),
-//            new Nz\SonataMediaBundle\NzSonataMediaBundle()
+            new Nz\SonataMediaBundle\NzSonataMediaBundle()
 //            new Nz\WordpressBundle\NzWordpressBundle(),
 //            new Nz\MigrationBundle\NzMigrationBundle(),
 //            new Nz\CrawlerBundle\NzCrawlerBundle(),

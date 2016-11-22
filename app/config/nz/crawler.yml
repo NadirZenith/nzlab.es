@@ -1,0 +1,30 @@
+#
+# more information can be found here https://sonata-project.org/bundles/media
+#
+sonata_media:
+
+    contexts:
+        crawl:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.file
+                - sonata.media.provider.vimeo
+                #NzSonataMediaBundle
+                - sonata.media.provider.video
+                - sonata.media.provider.sapo
+                - sonata.media.provider.soundcloud
+                - sonata.media.provider.playwire
+                - sonata.media.provider.audio
+
+            formats:
+                abstract: { width: 100, quality: 100}
+
+# Enable Doctrine to map the provided entities
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    NzCrawlerBundle: ~
