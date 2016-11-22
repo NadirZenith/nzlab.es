@@ -46,7 +46,8 @@
         "sonata-project/timeline-bundle": "3.0.0",
 
         "nz/portfolio-bundle": "dev-master",
-        "nz/sonata-media-bundle" : "dev-master"
+        "nz/sonata-media-bundle" : "dev-master",
+        "nz/wordpress-bundle" : "dev-master"
 
     },
 
@@ -67,8 +68,25 @@
       {
         "type": "git",
         "url": "https://github.com/NadirZenith/NzSonataMediaBundle"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzWordpressBundle.git"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzMigrationBundle.git"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzCrawlerBundle.git"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzCronBundle.git"
       }
     ],
+
     "scripts" : {
         "post-install-cmd" : [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

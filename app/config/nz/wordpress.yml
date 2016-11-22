@@ -23,3 +23,26 @@ doctrine:
                 connection: wp_connection
                 mappings:  
                     NzWordpressBundle: ~
+
+#
+# more information can be found here https://sonata-project.org/bundles/admin
+#
+sonata_admin:
+
+    dashboard:
+
+        groups:
+            sonata.admin.group.wp:
+                label:           NzWordpress
+                label_catalogue: AppBundle
+                icon:            '<i class="fa fa-wordpress"></i>'
+                items:
+#                    - nz.migration.admin
+                    - nz.wordpress.admin.user
+                    - nz.wordpress.admin.users_metas
+                    - nz.wordpress.admin.post
+                    - nz.wordpress.admin.posts_metas
+                    - nz.wordpress.admin.taxonomy
+                    - nz.wordpress.admin.term
+                    - nz.wordpress.admin.comment
+                    - nz.wordpress.admin.option

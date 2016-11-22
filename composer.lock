@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c3377adff274213820cae67888b21754",
-    "content-hash": "b24a586ecccd2ad4456a5aa388107177",
+    "hash": "c50a056ed951a74c5ab1a42d8a38a665",
+    "content-hash": "276232156d69b2bc072979c674145659",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2384,6 +2384,53 @@
                 "youtube"
             ],
             "time": "2016-11-22 20:40:22"
+        },
+        {
+            "name": "nz/wordpress-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NadirZenith/NzWordpressBundle.git",
+                "reference": "6bf7a50972fe8dee9664f04540a32acbedc71010"
+            },
+            "require": {
+                "symfony/framework-bundle": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~2.7",
+                "friendsofsymfony/rest-bundle": "~1.1",
+                "jackalope/jackalope-doctrine-dbal": "~1.1",
+                "nelmio/api-doc-bundle": "~2.4",
+                "sonata-project/admin-bundle": "~2.3",
+                "sonata-project/datagrid-bundle": "~2.2",
+                "sonata-project/doctrine-orm-admin-bundle": "~2.3",
+                "sonata-project/formatter-bundle": "~2.2",
+                "sonata-project/seo-bundle": "^1.1.5",
+                "symfony/phpunit-bridge": "~2.7|~3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Nz\\WordpressBundle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nadir Zenith",
+                    "email": "2cb.md2@gmail.com",
+                    "homepage": "https://nzlab.es"
+                }
+            ],
+            "description": "Symfony Nz Wordpress bundle with sonata integration",
+            "homepage": "https://nzlab.es",
+            "keywords": [
+                "sonata",
+                "wordpress"
+            ],
+            "time": "2016-04-16 09:25:12"
         },
         {
             "name": "paragonie/random_compat",
@@ -6629,7 +6676,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "nz/portfolio-bundle": 20,
-        "nz/sonata-media-bundle": 20
+        "nz/sonata-media-bundle": 20,
+        "nz/wordpress-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
