@@ -64,7 +64,7 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new FOS\CommentBundle\FOSCommentBundle(),
             new Sonata\CommentBundle\SonataCommentBundle(),
-            
+
             // SONATA FOUNDATION
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
@@ -94,8 +94,8 @@ class AppKernel extends Kernel
             new Nz\SonataMediaBundle\NzSonataMediaBundle(),
             new Nz\WordpressBundle\NzWordpressBundle(),
             new Nz\MigrationBundle\NzMigrationBundle(),
-            new Nz\CronBundle\NzCronBundle()
-//            new Nz\CrawlerBundle\NzCrawlerBundle(),
+            new Nz\CronBundle\NzCronBundle(),
+            new Nz\CrawlerBundle\NzCrawlerBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

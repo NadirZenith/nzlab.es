@@ -28,3 +28,18 @@ doctrine:
             default:
                 mappings:
                     NzCrawlerBundle: ~
+
+#
+# more information can be found here https://sonata-project.org/bundles/admin
+#
+sonata_admin:
+    dashboard:
+        groups:
+            sonata.admin.group.crawler:
+                label:           NzCrawler
+                label_catalogue: AppBundle
+                icon:            '<i class="fa fa-globe"></i>'
+                items:
+                    - nz.crawler.admin.crawled
+                    - nz.crawler.admin.profile
+                    - nz.crawler.admin.link

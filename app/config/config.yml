@@ -42,7 +42,7 @@ imports:
     - { resource: nz/wordpress.yml }
     - { resource: nz/migration.yml }
     - { resource: nz/cron.yml }
-#    - { resource: nz/crawler.yml.yml }
+    - { resource: nz/crawler.yml }
 
 
 framework:

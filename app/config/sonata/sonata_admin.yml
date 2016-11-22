@@ -69,26 +69,6 @@ sonata_admin:
                     - sonata.media.admin.gallery
                     - sonata.comment.admin.thread
                     - nz.portfolio.admin.work
-                    
-#            sonata.admin.group.crawler:
-#                label:           NzCrawler
-#                label_catalogue: AppBundle
-#                icon:            '<i class="fa fa-globe"></i>'
-#                items:
-#                    - nz.crawler.admin.crawled
-#                    - nz.crawler.admin.profile
-#                    - nz.crawler.admin.link
-                    
-#            sonata.admin.group.wp:
-#                label:           NzWordpress
-#                label_catalogue: AppBundle
-#                icon:            '<i class="fa fa-wordpress"></i>'
-#                items:
-#                    - nz_migration.admin
-#                    - nz_wordpress.admin.user
-#                    - nz_wordpress.admin.user_meta
-#                    - nz_wordpress.admin.post
-#                    - nz_wordpress.admin.post_meta
 
 
             sonata.admin.group.classification:
