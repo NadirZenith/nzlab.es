@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c50a056ed951a74c5ab1a42d8a38a665",
-    "content-hash": "276232156d69b2bc072979c674145659",
+    "hash": "d372e2569f49c2fb41606f94e176fa77",
+    "content-hash": "3fc96bb90ae57ed336a48772edf96acc",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2093,6 +2093,70 @@
             "time": "2015-06-25 17:26:56"
         },
         {
+            "name": "league/html-to-markdown",
+            "version": "4.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/html-to-markdown.git",
+                "reference": "c5b05d50c646d4e3cdfcc27b6d5ed62dfaeef4c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/c5b05d50c646d4e3cdfcc27b6d5ed62dfaeef4c1",
+                "reference": "c5b05d50c646d4e3cdfcc27b6d5ed62dfaeef4c1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-xml": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "mikehaertl/php-shellcommand": "~1.1.0",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "bin": [
+                "bin/html-to-markdown"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\HTMLToMarkdown\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "http://www.colinodell.com",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Nick Cernis",
+                    "email": "nick@cern.is",
+                    "homepage": "http://modernnerd.net",
+                    "role": "Original Author"
+                }
+            ],
+            "description": "An HTML-to-markdown conversion helper for PHP",
+            "homepage": "https://github.com/thephpleague/html-to-markdown",
+            "keywords": [
+                "html",
+                "markdown"
+            ],
+            "time": "2016-10-27 20:05:57"
+        },
+        {
             "name": "michelf/php-markdown",
             "version": "1.7.0",
             "source": {
@@ -2260,6 +2324,55 @@
             ],
             "description": "Symfony filesystem extension to handle temporary files",
             "time": "2016-03-05 10:22:50"
+        },
+        {
+            "name": "nz/migration-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NadirZenith/NzMigrationBundle.git",
+                "reference": "39e8a8a8ccb292d9f2f48a914f8089a6f1f4d5cb"
+            },
+            "require": {
+                "league/html-to-markdown": "^4.2",
+                "symfony/css-selector": "~2.1",
+                "symfony/dom-crawler": "~2.1",
+                "symfony/symfony": "~2.5"
+            },
+            "require-dev": {
+                "nz/wordpress-bundle": "~0.1",
+                "sonata-project/formatter-bundle": "~2.4@dev",
+                "sonata-project/media-bundle": "~2.4@dev"
+            },
+            "suggest": {
+                "sonata-project/admin-bundle": "~2.4@dev"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Nz\\MigrationBundle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nadir Zenith",
+                    "email": "2cb.md2@gmail.com",
+                    "homepage": "https://nzlab.es"
+                }
+            ],
+            "description": "Symfony Nz MigrationBundle with sonata admin",
+            "homepage": "https://nzlab.es",
+            "keywords": [
+                "entity",
+                "migration",
+                "orm",
+                "sonata",
+                "wordpress"
+            ],
+            "time": "2016-08-26 09:22:48"
         },
         {
             "name": "nz/portfolio-bundle",
@@ -6677,7 +6790,8 @@
     "stability-flags": {
         "nz/portfolio-bundle": 20,
         "nz/sonata-media-bundle": 20,
-        "nz/wordpress-bundle": 20
+        "nz/wordpress-bundle": 20,
+        "nz/migration-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

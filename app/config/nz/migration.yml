@@ -121,3 +121,15 @@ nz_migration:
                     place_name:                 [wpcf-event_place_name, meta, [ key: place_name]]
 
 
+#
+# more information can be found here https://sonata-project.org/bundles/admin
+#
+sonata_admin:
+
+    dashboard:
+
+        groups:
+            sonata.admin.group.wp:
+                items:
+                    - nz.migration.admin
+                    - nz.migration.admin.log
