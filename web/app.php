@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
+ini_set('xdebug.max_nesting_level', 500);
 require_once __DIR__ . '/../app/bootstrap.php.cache';
 require_once __DIR__ . '/../app/AppKernel.php';
 
