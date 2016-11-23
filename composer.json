@@ -51,7 +51,8 @@
         "nz/wordpress-bundle" : "dev-master",
         "nz/migration-bundle" : "dev-master",
         "nz/cron-bundle" : "dev-master",
-        "nz/crawler-bundle" : "dev-master"
+        "nz/crawler-bundle" : "dev-master",
+        "nelmio/api-doc-bundle": "^2.13"
 
 
     },
