@@ -20,10 +20,11 @@
 
         "doctrine/orm" : "2.5.5",
         "doctrine/doctrine-bundle" : "1.6.4",
+        "doctrine/doctrine-migrations-bundle": "1.2.0",
 
         "symfony/swiftmailer-bundle": "2.4.0",
         "symfony/monolog-bundle": "2.12.0",
-
+        "symfony/assetic-bundle": "2.8.1",
         "sensio/distribution-bundle": "3.0.30",
         "sensio/framework-extra-bundle": "3.0.12",
         "incenteev/composer-parameter-handler": "^2.0",
@@ -52,15 +53,14 @@
         "nz/cron-bundle" : "dev-master",
         "nz/crawler-bundle" : "dev-master"
 
+
     },
 
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0",
-        "symfony/assetic-bundle": "2.8.1",
         "willdurand/faker-bundle": "1.3.0",
-        "doctrine/doctrine-fixtures-bundle": "^2.3",
-        "doctrine/doctrine-migrations-bundle": "1.2.0"
+        "doctrine/doctrine-fixtures-bundle": "^2.3"
     },
 
     "repositories": [
