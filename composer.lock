@@ -2704,7 +2704,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NadirZenith/NzMigrationBundle.git",
-                "reference": "39e8a8a8ccb292d9f2f48a914f8089a6f1f4d5cb"
+                "reference": "325988c3aaeab0fc58ea23b68f6ca72d76692dbc"
             },
             "require": {
                 "league/html-to-markdown": "^4.2",
@@ -2745,7 +2745,7 @@
                 "sonata",
                 "wordpress"
             ],
-            "time": "2016-08-26 09:22:48"
+            "time": "2016-11-23 22:47:57"
         },
         {
             "name": "nz/portfolio-bundle",
