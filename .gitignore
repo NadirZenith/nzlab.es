@@ -3,7 +3,7 @@
 /app/*.cache
 /web/bundles
 /web/uploads
-/web/app_dev.php
+web/app_dev.php
 /web/.htaccess
 /web/sitemap*.xml
 /app/config/parameters*.yml
