@@ -3,6 +3,8 @@
 /app/*.cache
 /web/bundles
 /web/uploads
+/web/app_dev.php.dist
+/web/.htaccess
 /web/sitemap*.xml
 /app/config/parameters*.yml
 /vendor
