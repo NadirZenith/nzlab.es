@@ -1,0 +1,6 @@
+deploy locally with:
+$ sh ./deploy/deploy.sh (dev|prod|test)
+
+
+deliver remote with:
+$ ./deploy/deliver.sh (master|pre)
