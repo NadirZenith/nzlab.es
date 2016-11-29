@@ -11,6 +11,3 @@ Todo
 ----
  implement tests
  make backbone app
- 3
- 
- 
