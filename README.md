@@ -6,6 +6,9 @@ What's inside?
 --------------
  nzlab.es website
  
+Install?
+--------
+  Read deploy/readme
  
 Todo
 ----
