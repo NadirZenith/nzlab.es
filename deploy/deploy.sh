@@ -26,7 +26,7 @@ version_lt() { test "$(printf "$2\n$1" | sort -rV | head -n 1)" != "$1"; }
 #Check parameters
 if [ $# -eq 0 ]
 then
-    display_error "You must set an enviroment (dev|prod)"
+    display_error "You must set an enviroment (dev|test|prod)"
     die
 else
     display_success "Enviroment: $1"
