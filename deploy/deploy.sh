@@ -1,35 +1,14 @@
 #!/usr/bin/env sh
 
-#######################################################################
-########################  FUNCTIONS  ##################################
-#######################################################################
-display_error () {
-    echo "\033[33;31m[ERROR] $1 \033[0m"
-}
-
-display_success () {
-    echo "\033[33;32m[OK] $1 \033[0m"
-}
-
-display_info () {
-    echo "\033[33;33m[INFO] $1 \033[0m"
-}
-
-die () {
-    exit 1
-}
-version_lt() { test "$(printf "$2\n$1" | sort -rV | head -n 1)" != "$1"; }
-#######################################################################
-###################### END FUNCTIONS  #################################
-#######################################################################
+. $(dirname "$0")/functions.sh
 
 #Check parameters
 if [ $# -eq 0 ]
 then
-    display_error "You must set an enviroment (dev|prod)"
+    display_error "You must set an environment (dev|test|prod)"
     die
 else
-    display_success "Enviroment: $1"
+    display_success "Environment: $1"
 fi
 
 #Check php binary
@@ -156,7 +135,7 @@ then
 #    bin/node node_modules/.bin/grunt --force package
 
 else
-    display_error 'Enviroment not exists'
+    display_error 'Environment does not exists'
     die
 fi
 
