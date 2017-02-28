@@ -18,7 +18,7 @@ then
     display_info "Do you forgot to create a link? (ln -s /usr/bin/php bin/php)"
     die
 else
-    version=`php -v | grep cli`
+    version=`bin/php -v | grep cli`
     display_success "PHP found: $version"
 fi
 
@@ -29,7 +29,7 @@ then
     display_info "Do you forgot to create a link? (ln -s /usr/local/bin/composer bin/composer)"
     die
 else
-    version=`composer -V`
+    version=`bin/composer -V`
     display_success "Composer found: $version"
 fi
 
@@ -68,7 +68,7 @@ then
     display_error "Remove dump() function from: $dumps"
     die
 else
-    display_success "* dump() calls not found in src"
+    display_success "* dump() calls not found in src/"
 fi
 
 dumps=`find app/Resources/ -type f -print0 | xargs -0 grep -l "dump("`
@@ -77,7 +77,7 @@ then
     display_error "Remove dump() function from: $dumps"
     die
 else
-    display_success "* dump() calls not found views"
+    display_success "* dump() calls not found in app/Resources/"
 fi
 
 #Check for htaccess & robots
