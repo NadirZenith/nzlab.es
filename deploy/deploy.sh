@@ -40,7 +40,7 @@ fi
 #    display_info "Do you forgot to create a link? (ln -s /usr/local/bin/node bin/node)"
 #    die
 #else
-#    version=`node -v`
+#    version=`bin/node -v`
 #    display_success "Node found: $version"
 #fi
 #
@@ -51,7 +51,7 @@ fi
 #    display_info "Do you forgot to create a link? (ln -s /usr/local/bin/npm bin/npm)"
 #    die
 #else
-#    version=`npm -v`
+#    version=`bin/npm -v`
 #    min='2.0'
 #    if version_lt $min $version; then
 #        display_success "NPM found: $version"
