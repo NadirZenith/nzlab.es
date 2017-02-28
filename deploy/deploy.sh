@@ -5,10 +5,10 @@
 #Check parameters
 if [ $# -eq 0 ]
 then
-    display_error "You must set an enviroment (dev|test|prod)"
+    display_error "You must set an environment (dev|test|prod)"
     die
 else
-    display_success "Enviroment: $1"
+    display_success "Environment: $1"
 fi
 
 #Check php binary
@@ -135,7 +135,7 @@ then
 #    bin/node node_modules/.bin/grunt --force package
 
 else
-    display_error 'Enviroment not exists'
+    display_error 'Environment does not exists'
     die
 fi
 
