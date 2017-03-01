@@ -64,7 +64,6 @@ then
     display_info "robots.txt generated"
 fi
 
-
 #display_info 'Check for NPM updates'
 #bin/npm update
 #bin/npm list --depth=0
