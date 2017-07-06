@@ -3,12 +3,16 @@
 /app/*.cache
 /web/bundles
 /web/uploads
-web/app_dev.php
+/web/app_dev.php
 /web/.htaccess
 /web/sitemap*.xml
 /app/config/parameters*.yml
 /vendor
 /.idea
-/bin/composer
-/bin/php
 /backups
+
+
+#exclude BIN binaries
+/bin/*
+!/bin/console
+!/bin/symfony_requirements

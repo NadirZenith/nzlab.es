@@ -33,7 +33,7 @@ else
     display_success "Composer found: $version"
 fi
 
-display_info 'Check validators'
+display_info 'Check for debug code'
 dumps=`find src/ -type f -print0 | xargs -0 grep -l "dump("`
 if [ ! -z "$dumps" ]
 then
@@ -52,12 +52,14 @@ else
     display_success "* dump() calls not found in app/Resources/"
 fi
 
-#Check for htaccess & robots
-if [ ! -e 'web/.htaccess' ]
-then
-    cp web/.htaccess.dist web/.htaccess
-    display_info ".htaccess generated"
-fi
+#Check for .htaccess (apache only)
+#if [ ! -e 'web/.htaccess' ]
+#then
+#    cp web/.htaccess.dist web/.htaccess
+#    display_info ".htaccess generated"
+#fi
+
+#Check for robots.txt
 if [ ! -e 'web/robots.txt' ]
 then
     cp web/robots.txt.dist web/robots.txt
@@ -74,6 +76,12 @@ then
     export SYMFONY_ENV=dev
     bin/composer install
 
+    if [ ! -e 'web/app_dev.php' ]
+    then
+        cp web/app_dev.php.dist web/app_dev.php
+        display_info "app_dev.php generated"
+    fi
+
     display_success 'Upgrade database'
     bin/php app/console doctrine:schema:update --dump-sql --force
 
@@ -83,7 +91,7 @@ then
 elif [ $1 = 'test' ]
 then
     display_info 'Check for COMPOSER updates'
-    export SYMFONY_ENV=dev
+    export SYMFONY_ENV=test
     bin/composer install
 
     display_success 'Upgrade database'
