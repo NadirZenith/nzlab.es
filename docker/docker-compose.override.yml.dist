@@ -39,8 +39,6 @@ services:
 #        - ./volume/db/dump:/docker-entrypoint-initdb.d
 
     # enable run tests and debugging
-#    webserver:
-#      environment:
-#        TESTING: 1
-#      volumes:
-#          - ./php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/100-xdebug.ini
+    nginx:
+        ports:
+          - "101:80"
