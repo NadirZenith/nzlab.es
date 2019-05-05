@@ -1,0 +1,15 @@
+# exclude
+/.env
+/docker-compose.override.yml
+
+# /volume/
+# !/volume/.gitkeep
+
+/volume/db/*
+/volume/db/.gitkeep
+
+/volume/logs/*
+/volume/logs/.gitkeep
+
+/volume/uploads/*
+/volume/uploads/.gitkeep

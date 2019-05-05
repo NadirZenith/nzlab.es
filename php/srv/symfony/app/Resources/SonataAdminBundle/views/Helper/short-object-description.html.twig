@@ -1,0 +1,46 @@
+<span class="inner-field-short-description">
+    {% if object and admin.hasRoute('edit') and admin.isGranted('EDIT') %}
+        <a href="{{ admin.generateObjectUrl('edit', object, link_parameters) }}" target="new">
+            {% if object.providerName is defined %}
+                {# is media #}
+                <div class="row object-image">
+                    <img src="{% path object, 'admin'%}" ><br>
+                    {#{% thumbnail object, 'admin' with {'class': 'img-responsive'} %}#}
+                </div>
+
+            {% elseif object.defaultFormat is defined %}
+                {# is gallery #}
+                <div class="row object-gallery">
+                    {% for galMedia in object.galleryHasMedias %}
+                        <div class="col-md-4">
+                            {% thumbnail galMedia.media, 'admin' with {'class': 'img-responsive'} %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <style>
+                    .inner-field-short-description{
+                        display: block;
+                        width: 100%;
+                    }
+                    .object-gallery > div{
+                        height: 70px;
+                        padding: 0;
+                        float:none;
+                        display:inline-block;
+                        vertical-align:middle;
+                    }
+                    .object-gallery img{
+                        max-height: 100%;
+                    }
+                </style>
+            {% elseif object.__toString is defined %}
+                {# has toString (ex: user, related_post) #}
+
+                {{object}}
+            {% endif %}
+        </a>
+
+    {% else %}
+        {{ description }}
+    {% endif %}
+</span>

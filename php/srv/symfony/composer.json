@@ -1,0 +1,137 @@
+{
+    "name": "nz/nzlab",
+    "description": "NzLab.es WebSite",
+
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
+
+    "require": {
+        "php": ">=5.6",
+
+        "symfony/symfony": "2.8.14",
+
+        "doctrine/orm" : "2.5.5",
+        "doctrine/doctrine-bundle" : "1.6.4",
+        "doctrine/doctrine-migrations-bundle": "1.2.0",
+
+        "symfony/swiftmailer-bundle": "2.4.0",
+        "symfony/monolog-bundle": "2.12.0",
+        "symfony/assetic-bundle": "2.8.1",
+        "sensio/distribution-bundle": "3.0.30",
+        "sensio/framework-extra-bundle": "3.0.12",
+        "incenteev/composer-parameter-handler": "^2.0",
+        "friendsofsymfony/user-bundle": "^1.3",
+
+        "sonata-project/core-bundle" : "3.1.1",
+        "sonata-project/notification-bundle" : "3.0.0",
+        "sonata-project/formatter-bundle" : "3.0.1",
+        "sonata-project/intl-bundle" : "2.2.4",
+        "sonata-project/cache-bundle" : "2.3.1",
+        "sonata-project/media-bundle": "3.3.0",
+        "sonata-project/page-bundle" : "3.2.0",
+        "sonata-project/classification-bundle" : "3.1.0",
+        "sonata-project/admin-bundle" : "3.9.0",
+        "sonata-project/doctrine-orm-admin-bundle" : "3.1.1",
+        "sonata-project/datagrid-bundle" : "2.2",
+        "sonata-project/user-bundle" : "3.1.0",
+        "sonata-project/news-bundle" : "3.0.0",
+        "sonata-project/comment-bundle" : "3.0.0",
+        "sonata-project/timeline-bundle": "3.0.0",
+
+        "nz/portfolio-bundle": "dev-master",
+        "nz/sonata-media-bundle" : "dev-master",
+        "nz/wordpress-bundle" : "dev-master",
+        "nz/migration-bundle" : "dev-master",
+        "nz/cron-bundle" : "dev-master",
+        "nz/crawler-bundle" : "dev-master",
+        "nelmio/api-doc-bundle": "^2.13"
+
+
+    },
+
+    "require-dev": {
+        "sensio/generator-bundle": "^3.0",
+        "symfony/phpunit-bridge": "^3.0",
+        "willdurand/faker-bundle": "1.3.0",
+        "doctrine/doctrine-fixtures-bundle": "^2.3"
+    },
+
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/PortfolioBundle"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzSonataMediaBundle"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzWordpressBundle.git"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzMigrationBundle.git"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzCronBundle.git"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/NadirZenith/NzCrawlerBundle.git"
+      }
+    ],
+
+    "scripts" : {
+        "post-install-cmd" : [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-update-cmd" : [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ]
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "symfony-assets-install": "symlink",
+        "incenteev-parameters": [{
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "database_driver":   "DATABASE_DRIVER",
+                "database_host":     "DATABASE_HOST",
+                "database_name":     "DATABASE_NAME",
+                "database_user":     "DATABASE_USER",
+                "database_password": "DATABASE_PASSWORD",
+                "mailer_transport":  "MAILER_TRANSPORT",
+                "mailer_host":       "MAILER_HOST",
+                "mailer_user":       "MAILER_USER",
+                "mailer_password":   "MAILER_PASSWORD"
+            }
+        }]
+    }
+}

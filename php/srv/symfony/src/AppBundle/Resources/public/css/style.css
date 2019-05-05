@@ -1,0 +1,14 @@
+.navbar-brand{
+    width: 185px;
+}
+.page-header{
+    border: none;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.page-header ul.nav.nav-pills{
+    margin-top: 45px;
+}
+.sonata_breadcrumb ol.breadcrumb{
+    margin-top: 30px;
+}

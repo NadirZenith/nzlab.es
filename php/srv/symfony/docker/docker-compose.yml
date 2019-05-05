@@ -1,0 +1,36 @@
+version: "2"
+services:
+    mysql:
+      image: mariadb:10.1
+      container_name: nzlabes_mysql
+      working_dir: /application
+      volumes:
+        - ./volume/db/datadir:/var/lib/mysql
+
+      environment:
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_DATABASE: ${MYSQL_DATABASE}
+        MYSQL_USER: ${MYSQL_USER}
+        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    nginx:
+      image: nginx:alpine
+      container_name: nzlabes_nginx
+      working_dir: /application
+      volumes:
+          - ${APP_PATH}:/application
+          - ./volume/uploads:/application/web/uploads
+          - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+          - ./volume/logs/nginx:/var/log/nginx
+      ports:
+          - "80:80"
+
+    php-fpm:
+      build: php-fpm
+      container_name: nzlabes_phpfpm
+      working_dir: /application
+      volumes:
+          - ${APP_PATH}:/application
+          - ./php-fpm/php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini
+          - ./volume/logs/symfony:/application/logs
+

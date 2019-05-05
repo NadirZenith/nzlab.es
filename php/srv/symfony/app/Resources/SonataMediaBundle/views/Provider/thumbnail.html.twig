@@ -1,0 +1,6 @@
+
+{% if options.src is defined %}
+    <img {% for name, value in options %}{{name}}="{{value}}" {% endfor %} />
+{% else %}
+{% endif %}
+
