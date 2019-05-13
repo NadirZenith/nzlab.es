@@ -1,0 +1,39 @@
+/.idea
+/backups
+
+.env
+docker-compose.override.yml
+
+# elk
+/volumes/elk/data/logstash/*
+!/volumes/elk/data/logstash/.gitkeep
+
+# gatling
+/volumes/gatling/results/*
+!/volumes/gatling/results/.gitkeep
+
+# haproxy
+
+# mysql
+/volumes/mysql/initdb/*
+!/volumes/mysql/initdb/.gitkeep
+/volumes/mysql/logs/*
+!/volumes/mysql/logs/.gitkeep
+/volumes/mysql/data
+!/volumes/mysql/data/.gitkeep
+
+# nginx
+/volumes/nginx/logs/*
+!/volumes/nginx/logs/.gitkeep
+
+# php (symfony)
+/volumes/php/symfony/cache/*
+!/volumes/php/symfony/cache/.gitkeep
+/volumes/php/symfony/sessions/*
+!/volumes/php/symfony/sessions/.gitkeep
+/volumes/php/symfony/logs/*
+!/volumes/php/symfony/logs/.gitkeep
+/volumes/php/symfony/uploads/*
+!/volumes/php/symfony/uploads/.gitkeep
+
+# sphinx

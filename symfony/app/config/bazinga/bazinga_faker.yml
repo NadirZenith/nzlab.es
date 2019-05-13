@@ -1,5 +1,0 @@
-bazinga_faker:
-    orm: doctrine
-    locale: en_GB
-    entities:
-      

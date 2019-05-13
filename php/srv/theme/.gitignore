@@ -1,0 +1,16 @@
+*.iml
+*.ipr
+*.iws
+.idea/
+beer.log
+cli
+frontend
+phpunit.xml
+
+node_modules/*
+var/cache/*
+var/log/*
+vendor/*
+!**/.gitkeep
+!node_modules/custom/
+/dist/

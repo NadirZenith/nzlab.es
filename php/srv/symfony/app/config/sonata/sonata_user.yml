@@ -24,9 +24,10 @@ sonata_user:
         route:                page_slug
         parameters:           { path: / }
 
-    google_authenticator:
-        server:               %sonata_user.google_authenticator.server%
-        enabled:              true
+#    google_authenticator:
+#        sonata_user.google_authenticator.server:  demo.sonata-project.org
+#        server:               %sonata_user.google_authenticator.server%
+#        enabled:              true
 
     manager_type:             orm
 

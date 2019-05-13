@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel=icon href={{ asset('icon/favicon.ico') }}>
+
+    {% block head_styles %}
+        <link rel="stylesheet" href="{{ asset('css/theme.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+              crossorigin="anonymous">
+    {% endblock %}
+    {% block head_scripts %}
+        <script src="{{ asset('js/vendor.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/theme.js') }}" type="text/javascript"></script>
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+    {% include 'parts/navbar.html.twig' with {id: 'mainNav'} %}
+
+    <div class="container-fluid mt-5">
+        {% block container %}{% endblock %}
+    </div>
+
+    {% include 'parts/footer.html.twig' %}
+
+    {% block footer_scripts %}
+        <script>
+            window.app = new App({ authority: 'http://localhost:19002', pageId: '1' });
+            // window.app.register(new NavbarComponent('#mainNav'));
+        </script>
+    {% endblock %}
+{% endblock %}

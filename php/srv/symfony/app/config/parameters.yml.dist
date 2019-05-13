@@ -1,12 +1,13 @@
 parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
-    database_name:     sonata_boilerplate
-    database_user:     sonata
-    database_password: sonata
+    database_name:     mysql_db
+    database_user:     mysql_user
+    database_password: mysql_password
 
     mailer_transport:   smtp
     mailer_host:        localhost
+    mailer_port:        25
     mailer_user:
     mailer_password:
 
@@ -15,32 +16,22 @@ parameters:
     secret:             ThisTokenIsNotSoSecretChangeIt
 
     # Sonata Admin Options
-    sonata_admin.title:             Sonata Project
-    sonata_admin.logo_title:        /bundles/sonataadmin/logo_title.png
+    sonata_admin.title:             NzLab
+    sonata_admin.logo_title:        /bundles/app/logo_title.png
 
     # Sonata News Options
-    sonata_news.blog_title:         My Awesome Blog
-    sonata_news.blog_link:          http://awesome-blog.ltd
-    sonata_news.blog_description:   My Awesome blog description
-    sonata_news.salt:               ThisTokenIsNotSoSecretChangeIt
+    sonata_news.blog_title:         NzLab Blog
+    sonata_news.blog_link:          https://nzlab.es/blog
+    sonata_news.blog_description:   Personal tech/wiki blog
+    sonata_news.salt:               %secret%
     sonata_news.comment.emails:     [mail@example.org]
     sonata_news.comment.email_from: no-reply@example.org
 
     # Sonata Media options
-    sonata_media.cdn.host:          http://demo.sonata-project.org/uploads/media
-
-    # Sonata User Options
-    sonata_user.google_authenticator.server:  demo.sonata-project.org
-
-    # Sonata Page Options
-    sonata_page.varnish.command: if [ ! -r "/etc/varnish/secret" ]; then echo "VALID ERROR :/"; else varnishadm -S /etc/varnish/secret -T 127.0.0.1:6082 {{ COMMAND }} "{{ EXPRESSION }}"; fi; # you need to adapt this line to work with your configuration
-
-    # Fixtures variables
-    sonata.fixtures.page.create_subsite: false # create a second website, so you can test the multisite feature
+    sonata_media.cdn.host:          https://cdn.nzlab.es/uploads/media
 
     # Nz Bundles
     wp_database_name:     wp_db
-    #provisional nz sonata video provider settings
     ffmpeg.binaries: ~
     ffprobe.binaries: ~
     ffmpeg.frame.seconds: ~

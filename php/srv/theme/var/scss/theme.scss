@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+
+/*-- Bootswatch modified theme --*/
+@import "cyborg/variables";
+
+$body-bg: $black;
+
+body{
+  padding-top: 60px;
+}
+
+.navbar-brand img {
+  max-height: 60px;
+}
+
+.container-fluid {
+  max-width: 1350px;
+}
+
+/*SLIDER*/
+@import "vendor/slider/slick";
+@import "vendor/slider/slick-theme";
+
+
+/*-- Freelancer theme --*/
+//@import "freelance/freelancer";
+
+/*-- Bootstrap --*/
+// Bootstrap ...........
+
+// Required
+@import "vendor/bootstrap/functions";
+@import "vendor/bootstrap/variables";
+@import "vendor/bootstrap/mixins";
+
+// Optional
+@import "vendor/bootstrap/root";
+@import "vendor/bootstrap/reboot";
+@import "vendor/bootstrap/type";
+@import "vendor/bootstrap/images";
+@import "vendor/bootstrap/code";
+@import "vendor/bootstrap/grid";
+@import "vendor/bootstrap/tables";
+@import "vendor/bootstrap/forms";
+@import "vendor/bootstrap/buttons";
+@import "vendor/bootstrap/transitions";
+@import "vendor/bootstrap/dropdown";
+@import "vendor/bootstrap/button-group";
+@import "vendor/bootstrap/input-group";
+@import "vendor/bootstrap/custom-forms";
+@import "vendor/bootstrap/nav";
+@import "vendor/bootstrap/navbar";
+@import "vendor/bootstrap/card";
+@import "vendor/bootstrap/breadcrumb";
+@import "vendor/bootstrap/pagination";
+@import "vendor/bootstrap/badge";
+@import "vendor/bootstrap/jumbotron";
+@import "vendor/bootstrap/alert";
+@import "vendor/bootstrap/progress";
+@import "vendor/bootstrap/media";
+@import "vendor/bootstrap/list-group";
+@import "vendor/bootstrap/close";
+@import "vendor/bootstrap/toasts";
+@import "vendor/bootstrap/modal";
+@import "vendor/bootstrap/tooltip";
+@import "vendor/bootstrap/popover";
+@import "vendor/bootstrap/carousel";
+@import "vendor/bootstrap/spinners";
+@import "vendor/bootstrap/utilities";
+@import "vendor/bootstrap/print";
+
+// Full
+//@import "vendor/bootstrap/bootstrap";
+//@import "vendor/bootstrap/bootstrap-reboot";
+
+@import "cyborg/bootswatch";

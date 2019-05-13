@@ -1,0 +1,23 @@
+{
+    "name": "nzlabes/theme",
+    "require": {
+        "php": ">=7.1",
+        "ext-fileinfo": "*",
+        "ext-json": "*",
+        "fzaninotto/faker": "^1.8",
+        "silex/silex": "~2.0",
+        "symfony/twig-bridge": "^4.1",
+        "twig/extensions": "^1.5",
+        "twig/twig": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "var/php"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "\\": "test/php"
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+    <div class="row vh-100 pt-5">
+        <div class="col-6">
+            <section class="last-posts">
+                <h2 class="text-center h5 text-secondary">Posts</h2>
+                <ul class="list-group">
+                    {% for i in 1..8 %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <a class="text-secondary" href="">
+                                {{ fakeWords(9)|capitalize }}
+                            </a>
+                            <div>
+                                <span class="badge badge-dark badge-pill">{{ fakeRandomInt(0, 5) }}</span>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </div>
+        <div class="col-6">
+            <section class="portfolio">
+                <h2 class="text-center h5 text-secondary">Work</h2>
+                <div class="portfolio-slider">
+                    {% for i in 1..2 %}
+                        <div class="card p-5">
+                            <a class="text-center text-secondary" href="#portfolio-route">
+                                <img class="d-block mx-auto"
+                                     src="http://nzlab.es/uploads/media/portfolio/0001/01/thumb_10_portfolio_small.png"
+                                     alt="Card image">
+                                <div class="card-body">
+                                    <p class="card-text text-center">{{ fakeWords(fakeRandomInt(3, 6))|upper }}</p>
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-right">
+                                    <span class="badge badge-dark">{{ fakeWords(fakeRandomInt(1, 2)) }}</span>
+                                    <span class="badge badge-dark">{{ fakeWords(fakeRandomInt(1, 2)) }}</span>
+                                    <span class="badge badge-dark">{{ fakeWords(fakeRandomInt(1, 2)) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer_scripts %}
+    <script>
+        $(document).ready(function () {
+            $('.portfolio-slider').slick({});
+        });
+    </script>
+{% endblock %}

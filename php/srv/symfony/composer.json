@@ -122,15 +122,16 @@
         "incenteev-parameters": [{
             "file": "app/config/parameters.yml",
             "env-map": {
+                "secret":            "SF_SECRET",
                 "database_driver":   "DATABASE_DRIVER",
-                "database_host":     "DATABASE_HOST",
-                "database_name":     "DATABASE_NAME",
-                "database_user":     "DATABASE_USER",
-                "database_password": "DATABASE_PASSWORD",
-                "mailer_transport":  "MAILER_TRANSPORT",
-                "mailer_host":       "MAILER_HOST",
-                "mailer_user":       "MAILER_USER",
-                "mailer_password":   "MAILER_PASSWORD"
+                "database_host":     "MYSQL_HOST",
+                "database_name":     "MYSQL_DATABASE",
+                "database_user":     "MYSQL_USER",
+                "database_password": "MYSQL_PASSWORD",
+                "mailer_host":       "SMTP_SERVER",
+                "mailer_port":       "SMTP_PORT",
+                "mailer_user":       "SMTP_USER",
+                "mailer_password":   "SMTP_PASS"
             }
         }]
     }
