@@ -30,15 +30,16 @@ RUN docker-php-ext-configure intl --with-icu-dir=/usr/local && \
     docker-php-ext-install intl pdo pdo_mysql opcache gd sockets zip bcmath && \
     docker-php-ext-install -j$(nproc) gd
 
-# **
-# xdebug
-#RUN pecl install xdebug-2.5.0 \
-#    && docker-php-ext-enable xdebug
-
 ##apcu
 #RUN pecl install apcu-4.0.10 \
 #    && docker-php-ext-enable \
 #    apcu
+
+# xdebug
+RUN pecl install xdebug-2.6.0 \
+    && docker-php-ext-enable xdebug
+
+ADD php/etc/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -59,6 +60,7 @@ USER root
 ADD php/bin/startup.sh /startup.sh
 
 #WORKDIR  "/srv"
+EXPOSE 9999
 
 ENTRYPOINT ["/startup.sh"]
 
