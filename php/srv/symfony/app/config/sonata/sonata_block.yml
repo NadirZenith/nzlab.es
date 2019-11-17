@@ -45,11 +45,10 @@ sonata_block:
         sonata.news.block.recent_comments:
         sonata.news.block.recent_posts:
 
-       
+
 
         # TimelineBundle's Blocks
 
-        sonata.timeline.block.timeline:
         sonata.timeline.block.timeline:
             contexts:   [admin]
 
@@ -81,6 +80,6 @@ sonata_block:
         sonata.formatter.block.formatter:
 
         sonata.seo.block.breadcrumb.homepage:
-        
+
         # NzPortfolio
         nz.portfolio.block.random_work:

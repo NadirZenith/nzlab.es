@@ -131,7 +131,8 @@
                 "mailer_host":       "SMTP_SERVER",
                 "mailer_port":       "SMTP_PORT",
                 "mailer_user":       "SMTP_USER",
-                "mailer_password":   "SMTP_PASS"
+                "mailer_password":   "SMTP_PASS",
+                "sonata_media.cdn.host":   "NZLAB_CDN_HOST"
             }
         }]
     }

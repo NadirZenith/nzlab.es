@@ -28,7 +28,7 @@ parameters:
     sonata_news.comment.email_from: no-reply@example.org
 
     # Sonata Media options
-    sonata_media.cdn.host:          https://cdn.nzlab.es/uploads/media
+    sonata_media.cdn.host: 'https://cdn.nzlab.test:19008/uploads/media'
 
     # Nz Bundles
     wp_database_name:     wp_db
