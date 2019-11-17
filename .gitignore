@@ -25,6 +25,8 @@ docker-compose.override.yml
 # nginx
 /volumes/nginx/logs/*
 !/volumes/nginx/logs/.gitkeep
+/volumes/nginx/certs/*
+!/volumes/nginx/certs/.gitkeep
 
 # php (symfony)
 /volumes/php/symfony/cache/*
