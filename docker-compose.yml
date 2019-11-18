@@ -20,8 +20,6 @@ services:
     build:
       context: ./
       dockerfile: nginx/Dockerfile
-    environment:
-      - SF_HOSTNAME:$SF_HOSTNAME
     links:
       - php
     depends_on:

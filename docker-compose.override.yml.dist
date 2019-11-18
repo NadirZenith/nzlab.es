@@ -4,19 +4,6 @@ services:
   # this haproxy is for development, in production we use on common
   # to other services/projects pointing directly to nginx container
   # this network needs to be connected to the proxy network
-  haproxy:
-    container_name: ${COMPOSE_PROJECT_NAME}_haproxy
-    build: haproxy/
-    network_mode: "host"
-    environment:
-      - HAPROXY_HTTP_HOST=$PROXY_HOST
-      - HAPROXY_HTTP_PORT_SF=$PROXY_HOST_PORT_SF
-      - HAPROXY_HTTP_PORT_CDN=$PROXY_HOST_PORT_CDN
-      - HAPROXY_PEM_FILENAME=$PROXY_PEM_FILENAME
-    volumes:
-      - $PROXY_SSL_FILEPATH:/etc/ssl
-    ports:
-      - $PROXY_PORT_HTTPS:443
 
   mysql:
     ports:
@@ -31,10 +18,7 @@ services:
   nginx:
     ports:
       - $HELLO_PORT_HTTP:80
-
       - $SF_PORT_HTTP:81
-#      - $SF_PORT_HTTPS:443
-
       - $THEME_PORT_HTTP:82
       - $CDN_PORT_HTTP:83
     volumes:
