@@ -3,8 +3,10 @@
 
 chmod -R 777 /srv/symfony/app/cache/
 chmod -R 777 /srv/symfony/app/logs/
+rm /srv/symfony/app/config/parameters.yml
 
-su -c "cd /srv/symfony/ && ./bin/deploy.sh ${PACKAGE_ENV}" - dev
+cd /srv/symfony/ && ./bin/deploy.sh ${PACKAGE_ENV}
+#su -c "cd /srv/symfony/ && ./bin/deploy.sh ${PACKAGE_ENV}" - dev
 
 #cd /srv/symfony/
 #composer install;

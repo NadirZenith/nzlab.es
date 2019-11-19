@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 #     supervisor cron     libzip-dev libjpeg-dev libpng-dev net-tools iputils-ping \
 
-RUN curl -fsS -o /tmp/icu.tgz -L http://download.icu-project.org/files/icu4c/59.1/icu4c-59_1-src.tgz \
+RUN curl -fsS -o /tmp/icu.tgz -L http://download.icu-project.org/files/icu4c/64.2/icu4c-64_2-src.tgz \
   && tar -zxf /tmp/icu.tgz -C /tmp \
   && cd /tmp/icu/source \
   && ./configure --prefix=/usr/local \
@@ -45,17 +45,17 @@ ADD php/etc/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version
 
-#RUN usermod -u 1000 www-data
-RUN useradd -ms /bin/bash dev
-RUN usermod -u 1000 dev
-
-USER dev
-
-# **
-RUN echo 'alias sf="php app/console"' >> ~/.bashrc
-RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
-
-USER root
+##RUN usermod -u 1000 www-data
+#RUN useradd -ms /bin/bash dev
+#RUN usermod -u 1000 dev
+#
+#USER dev
+#
+## **
+#RUN echo 'alias sf="php app/console"' >> ~/.bashrc
+#RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
+#
+#USER root
 
 ADD php/bin/startup.sh /startup.sh
 
