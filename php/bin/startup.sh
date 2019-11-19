@@ -5,7 +5,8 @@ chmod -R 777 /srv/symfony/app/cache/
 chmod -R 777 /srv/symfony/app/logs/
 rm /srv/symfony/app/config/parameters.yml
 
-cd /srv/symfony/ && ./bin/deploy.sh ${PACKAGE_ENV}
+sh /srv/symfony/bin/deploy.sh ${PACKAGE_ENV}
+#cd /srv/symfony/ && ./bin/deploy.sh ${PACKAGE_ENV}
 #su -c "cd /srv/symfony/ && ./bin/deploy.sh ${PACKAGE_ENV}" - dev
 
 #cd /srv/symfony/
