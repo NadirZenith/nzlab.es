@@ -12,26 +12,26 @@ else
 fi
 
 #Check php binary
-if [ ! -x 'bin/php' ]
-then
-    display_error "PHP CLI not found "
-    display_info "Do you forgot to create a link? (ln -s /usr/bin/php bin/php)"
-    die
-else
-    version=`bin/php -v | grep cli`
-    display_success "PHP found: $version"
-fi
+#if [ ! -x 'bin/php' ]
+#then
+#    display_error "PHP CLI not found "
+#    display_info "Do you forgot to create a link? (ln -s /usr/bin/php bin/php)"
+#    die
+#else
+#    version=`bin/php -v | grep cli`
+#    display_success "PHP found: $version"
+#fi
 
 #Check Composer binary
-if [ ! -x 'bin/composer' ]
-then
-    display_error "Composer not found at 'bin' folder"
-    display_info "Do you forgot to create a link? (ln -s /usr/local/bin/composer bin/composer)"
-    die
-else
-    version=`bin/composer -V`
-    display_success "Composer found: $version"
-fi
+#if [ ! -x 'bin/composer' ]
+#then
+#    display_error "Composer not found at 'bin' folder"
+#    display_info "Do you forgot to create a link? (ln -s /usr/local/bin/composer bin/composer)"
+#    die
+#else
+#    version=`bin/composer -V`
+#    display_success "Composer found: $version"
+#fi
 
 display_info 'Check for debug code'
 dumps=`find src/ -type f -print0 | xargs -0 grep -l "dump("`
