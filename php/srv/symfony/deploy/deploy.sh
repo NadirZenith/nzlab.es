@@ -74,7 +74,7 @@ if [ $1 = 'dev' ]
 then
     display_info 'Check for COMPOSER updates'
     export SYMFONY_ENV=dev
-    bin/composer install
+    composer install
 
     if [ ! -e 'web/app_dev.php' ]
     then
@@ -83,32 +83,32 @@ then
     fi
 
     display_success 'Upgrade database'
-    bin/php app/console doctrine:schema:update --dump-sql --force
+    php app/console doctrine:schema:update --dump-sql --force
 
 #    display_success 'Generate ASSETS'
-#    bin/node node_modules/.bin/grunt --force default
+#    node node_modules/.grunt --force default
 
 elif [ $1 = 'test' ]
 then
     display_info 'Check for COMPOSER updates'
     export SYMFONY_ENV=test
-    bin/composer install
+    composer install
 
     display_success 'Upgrade database'
-    bin/php app/console doctrine:schema:update --dump-sql --force
-    bin/php app/console doctrine:fixtures:load --no-interaction
+    php app/console doctrine:schema:update --dump-sql --force
+    php app/console doctrine:fixtures:load --no-interaction
 
 #    display_success 'Generate ASSETS'
-#    bin/node node_modules/.bin/grunt --force package
+#    node node_modules/.bin/grunt --force package
 
 elif [ $1 = 'prod' ]
 then
     display_info 'Check for COMPOSER updates'
     export SYMFONY_ENV=prod
-    bin/composer install --no-dev --optimize-autoloader
+    composer install --no-dev --optimize-autoloader
 
     display_success 'Upgrade database'
-    bin/php app/console doctrine:schema:update --dump-sql --force
+    php app/console doctrine:schema:update --dump-sql --force
 
 #    display_success 'Generate ASSETS'
 #    bin/node node_modules/.bin/grunt --force package
