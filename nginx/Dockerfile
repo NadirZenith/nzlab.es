@@ -21,7 +21,7 @@ RUN mkdir -p /etc/nginx/certs
 
 # this certificate files are *copied from letsencrypt
 #
-ADD /nginx/certs/fullchain.pem /etc/nginx/certs/fullchain.pem
-ADD /nginx/certs/privkey.pem /etc/nginx/certs/privkey.pem
+#ADD /nginx/certs/fullchain.pem /etc/nginx/certs/fullchain.pem
+#ADD /nginx/certs/privkey.pem /etc/nginx/certs/privkey.pem
 
 EXPOSE 80

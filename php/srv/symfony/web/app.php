@@ -1,15 +1,15 @@
 <?php
 
-umask(0000);
+//umask(0000);
 
 require_once __DIR__ . '/../app/bootstrap.php.cache';
 require_once __DIR__ . '/../app/AppKernel.php';
 
 $environment = getenv('PACKAGE_ENV');
-$debug = false;
-if ((int)getenv('PACKAGE_DEBUG')) {
+$debug = (int)getenv('PACKAGE_DEBUG');
+if ($debug) {
     ini_set('xdebug.max_nesting_level', 500);
-    $debug = true;
+    \Symfony\Component\Debug\Debug::enable();
 }
 
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && preg_match('/\bhttps\b/i', $_SERVER['HTTP_X_FORWARDED_PROTO'])) {

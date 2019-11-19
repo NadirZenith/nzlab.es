@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3'
 
 services:
   # this haproxy is for development, in production we use on common
@@ -20,7 +20,7 @@ services:
       - $HELLO_PORT_HTTP:80
       - $SF_PORT_HTTP:81
       - $THEME_PORT_HTTP:82
-      - $CDN_PORT_HTTP:83
+      - $STATIC_PORT_HTTP:83
     volumes:
       - ./php/srv:/srv # code
       - ./volumes/php/symfony/uploads:/srv/symfony/web/uploads
