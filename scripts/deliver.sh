@@ -2,7 +2,7 @@
 
 ssh nzpro "
 cd services/nzlab.es/;
-git pull;
 docker-compose down;
+git pull;
 docker-compose up --build -d;
 exit"
